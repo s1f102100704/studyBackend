@@ -10,7 +10,9 @@ export const travelSpotUseCase = {
     console.log('travelStartingSpot', travelStartingSpot);
     return `行き先地: ${travelStartingSpot}`;
   },
-
+  pa: (travelStartingSpot: string): string => {
+    return `${travelStartingSpot}`;
+  },
   fetchTravelSpots: async (query: string): Promise<TravelSpot[]> => {
     try {
       const encodedQuery = encodeURIComponent(query);

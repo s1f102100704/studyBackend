@@ -20,9 +20,9 @@ const TravelDestination = () => {
     router.push('/travelSpotList');
   };
   const clickButton = async () => {
-    const res = await apiClient.travelStartingSpot.$post({
-      body: {
-        destination: '京都',
+    const res = await apiClient.travelStartingSpot.$get({
+      query: {
+        spot: 'hello',
       },
     });
     console.log(res);
