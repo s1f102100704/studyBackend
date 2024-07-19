@@ -19,7 +19,14 @@ const TravelDestination = () => {
     setTravelSpots(res);
     router.push('/travelSpotList');
   };
-
+  const clickButton = async () => {
+    const res = await apiClient.travelStartingSpot.$post({
+      body: {
+        destination: '京都',
+      },
+    });
+    console.log(res);
+  };
   return (
     <div>
       <div className={styles.container}>
@@ -34,7 +41,7 @@ const TravelDestination = () => {
           alt="world Image"
           className={styles.image}
         />
-
+        <button onClick={clickButton}>んぽた</button>
         <div className={styles.searchBox}>
           <div className={styles.normaltext}>行きたい場所を入力してください</div>
           <div className={styles.box}>
